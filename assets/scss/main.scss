@@ -1,0 +1,18 @@
+@import "./_variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./_overrides.scss";
+@import "./custom.scss";
+@import "./loaders.scss";
+
+
+body {
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+
+    min-height: 20%;
+}

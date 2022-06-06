@@ -1,12 +1,11 @@
 export class Weather {
     constructor(weatherData) {
-        this.degrees = weatherData.data
+        this.degrees = weatherData.main.temp
+        this.f = 1.8 * (this.degrees - 273.15) + 32
+        this.c = this.degrees - 273.15
     }
 
 
-    static TempTemplate(weather) {
-        return ` <h2 onclick="app.weatherController.getCelsius()"></h2>`
-    }
 
     get Template() {
         return `
@@ -17,13 +16,13 @@ export class Weather {
 
     get Fahrenheit() {
         return `
-         <h2  onclick="app.weatherController.getCelsius('${this.degrees}')"></h2>
+         <h2  onclick="app.weatherController.getCelsius()">${this.f}</h2>
          `
 
     }
     get Celsius() {
         return ` 
-        <h2 onclick="app.weatherController.getFahrenheit('${this.degrees}')"></h2>
+        <h2 onclick="app.weatherController.getFahrenheit()">${this.f}</h2>
         `
 
     }

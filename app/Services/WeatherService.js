@@ -9,7 +9,7 @@ class WeatherService {
         console.log(res.data.main.temp);
         // let F = 1.8 * (temp - 273.15) + 32
         // let C = temp - 273.15
-        ProxyState.weather = new Weather(res.data.main.temp)
+        ProxyState.weather = new Weather(res.data)
 
 
 
@@ -32,17 +32,17 @@ class WeatherService {
     //     document.getElementById('weather=api').innerText = C
     // }
 
-    getCelsius() {
-        let c = ProxyState.weather
-        let C = c - 273.15
-        document.getElementById('weather-api').innerHTML = C.toFixed(0)
-    }
+    // getCelsius() {
+    //     let c = ProxyState.weather
+    //     let C = c - 273.15
+    //     document.getElementById('weather-api').innerHTML = C.toFixed(0)
+    // }
 
-    getFahrenheit() {
-        let f = ProxyState.weather
-        let F = 1.8 * (f - 273.15) + 32
-        document.getElementById('weather-api').innerHTML = F.toFixed(0)
-    }
+    // getFahrenheit() {
+    //     let f = ProxyState.weather
+    //     let F = 1.8 * (f - 273.15) + 32
+    //     document.getElementById('weather-api').innerHTML = F.toFixed(0)
+    // }
 
 }
 

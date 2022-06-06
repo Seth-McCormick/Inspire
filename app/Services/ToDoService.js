@@ -19,7 +19,7 @@ class ToDoService {
     async addToDos(todoData) {
         const res = await sandboxApi.post('seth/toDos', todoData)
         console.log('create todo', res.data);
-        ProxyState.toDos = [...ProxyState.toDos, new ToDo(todoData)]
+        ProxyState.toDos = [...ProxyState.toDos, new ToDo(res.data)]
         ProxyState.toDos = ProxyState.toDos
 
     }
